@@ -49,6 +49,7 @@ functions:
           path: notes
           method: post
           authorizer: aws_iam
+          cors: true
 
   get:
     # Defines an HTTP API endpoint that calls the main function in get.js
@@ -60,6 +61,7 @@ functions:
           path: notes/{id}
           method: get
           authorizer: aws_iam
+          cors: true
 
   list:
     # Defines an HTTP API endpoint that calls the main function in list.js
@@ -71,6 +73,7 @@ functions:
           path: notes
           method: get
           authorizer: aws_iam
+          cors: true
 
   update:
     # Defines an HTTP API endpoint that calls the main function in update.js
@@ -82,6 +85,7 @@ functions:
           path: notes/{id}
           method: put
           authorizer: aws_iam
+          cors: true
 
   delete:
     # Defines an HTTP API endpoint that calls the main function in delete.js
@@ -93,6 +97,8 @@ functions:
           path: notes/{id}
           method: delete
           authorizer: aws_iam
+          cors: true
+
   billing:
     # Defines an HTTP API endpoint that calls the main function in billing.js
     # - path: url path is /billing
@@ -103,5 +109,9 @@ functions:
           path: billing
           method: post
           authorizer: aws_iam
-   
-
+          cors: true
+      
+# Create our resources with separate CloudFormation templates
+resources:
+  # API Gateway Errors
+  - ${file(resources/api-gateway-errors.yml)}

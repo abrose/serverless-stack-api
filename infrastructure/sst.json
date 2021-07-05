@@ -1,0 +1,6 @@
+{
+  "name": "notes-infra",
+  "stage": "dev",
+  "region": "eu-central-1",
+  "lint": true
+}

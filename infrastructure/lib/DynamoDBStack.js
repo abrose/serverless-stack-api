@@ -19,6 +19,7 @@ export default class DynamoDBStack extends sst.Stack {
       value: table.tableName,
       exportName: app.logicalPrefixedName("TableName"),
     });
+    
     new CfnOutput(this, "TableArn", {
       value: table.tableArn,
       exportName: app.logicalPrefixedName("TableArn"),
